@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Conversation Events</name>
+    <events>
+        <variable constant="0" name="waittime" sid="7789418550296885" static="0" type="number">0.8</variable>
+        <variable constant="0" name="waiting" sid="9900831587349072" static="0" type="number">0</variable>
+        <variable constant="0" name="ConvType" sid="6669349177038287" static="0" type="number">0</variable>
+        <variable constant="0" name="TimeRemaining2" sid="5891463659234537" static="0" type="number">10</variable>
+        <event-block sid="9746501621452358">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2872914052831181" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="6209099010437854" type="System">
+                    <param id="0" name="Variable">TimeRemaining</param>
+                    <param id="1" name="Value">0.1</param>
+                </action>
+                <action id="0" name="Set text" sid="5859879024732584" type="TimeRemaining">
+                    <param id="0" name="Text">&quot;&quot;&amp;TimeRemaining</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="734148820965848">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8275324479677312" type="System">
+                            <param id="0" name="Variable">TimeRemaining</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6291026864900271" type="System">
+                            <param id="0" name="Layout">Game</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1010742239510937">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="1640580549523144" type="System">
+                    <param id="0" name="First value">waiting</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1866997414194163" type="System">
+                    <param id="0" name="Variable">ConvType</param>
+                    <param id="1" name="Value">choose(1,2,3)</param>
+                </action>
+                <action id="-9" name="Set value" sid="4511783127377923" type="System">
+                    <param id="0" name="Variable">waiting</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6675269267602163">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2893175095143927" type="System">
+                            <param id="0" name="Variable">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="121818616801314" type="paper" />
+                        <action id="-9" name="Destroy" sid="1965957780326922" type="rock" />
+                        <action id="-9" name="Destroy" sid="5195757571075552" type="scissors" />
+                        <action id="-3" name="Create object" sid="9323111312245611" type="System">
+                            <param id="0" name="Object to create">paper</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">360</param>
+                            <param id="3" name="Y">147</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="7213440186550409" type="FriendConv">
+                            <param id="0" name="Animation">&quot;sad&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2880368821486289">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3013637550506965" type="System">
+                            <param id="0" name="Variable">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1596657595543322" type="paper" />
+                        <action id="-9" name="Destroy" sid="2051314861924836" type="rock" />
+                        <action id="-9" name="Destroy" sid="5559615346332885" type="scissors" />
+                        <action id="-3" name="Create object" sid="6313891554205971" type="System">
+                            <param id="0" name="Object to create">rock</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">360</param>
+                            <param id="3" name="Y">147</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2302805311474954" type="FriendConv">
+                            <param id="0" name="Animation">&quot;happy&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4052364254760867">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2160565033801433" type="System">
+                            <param id="0" name="Variable">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2776363055609386" type="paper" />
+                        <action id="-9" name="Destroy" sid="6325634059271939" type="rock" />
+                        <action id="-9" name="Destroy" sid="2545356101207731" type="scissors" />
+                        <action id="-3" name="Create object" sid="5401525958704114" type="System">
+                            <param id="0" name="Object to create">scissors</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">360</param>
+                            <param id="3" name="Y">147</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="879472470591115" type="FriendConv">
+                            <param id="0" name="Animation">&quot;angry&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2109740681825095">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="4348773422335333" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">paperbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="9642994043229844" type="PlayerConv">
+                    <param id="0" name="Animation">&quot;agree&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9049834909595734">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9746152322495647" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7229807080783019" type="FriendConv">
+                            <param id="0" name="Animation">&quot;fail&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1076618950811333" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7741339462780366" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="580173807316504">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8083982344578394" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="3714990574438112" type="FriendConv">
+                            <param id="0" name="Animation">&quot;win&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2869214698522009" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7132493302421179" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3956834390286244">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7357454593265036" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6844910616072183" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6209369393378582" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3673113971672675">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5418279194784218" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">rockbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7683039762488969" type="PlayerConv">
+                    <param id="0" name="Animation">&quot;neutral&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2862732427343124">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9154212459234551" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="7933475370948771" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3928893841810146" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9655394315001529">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9619798291666305" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="5623117436542807" type="FriendConv">
+                            <param id="0" name="Animation">&quot;fail&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="315759218915096" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3784830979732582" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3009253803183815">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5445371705224315" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="3907696883832549" type="FriendConv">
+                            <param id="0" name="Animation">&quot;win&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5575071274321268" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4189957992517272" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1756729193016283">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5235105409375402" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">scissorsbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="6838331999064331" type="PlayerConv">
+                    <param id="0" name="Animation">&quot;disagree&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="8184296872156873">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8253953317920857" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8622057393090106" type="FriendConv">
+                            <param id="0" name="Animation">&quot;win&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3689628577367758" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7826475339915123" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8366570106456719">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1517108401434807" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2213164332125828" type="FriendConv">
+                            <param id="0" name="Animation">&quot;fail&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9178303325887421" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7958850951279822" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8218761019973298">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3599666483153894" type="System">
+                            <param id="0" name="First value">ConvType</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7898060255152529" type="System">
+                            <param id="0" name="Variable">waiting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2712717820629629" type="System">
+                            <param id="0" name="Seconds">waittime</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

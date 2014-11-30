@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Autorunner</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>mq4njje893h0</unique-id>
+    <saved-with-version>18400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>630</width>
+        <height>360</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">iPhone only</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="GUI">
+            <object-type name="GameOverReplay" sid="4394430763418866">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="HighScoreButton" sid="7809945064367879">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="GameOverReturn" sid="9064968876883506">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="StoreButton" sid="4246732063040239">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="Play" sid="6140857825237313">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="StoreReturn" sid="668036834555654">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="ReturnHS" sid="9827950375718464">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="StoreTitle" sid="6113929916562274">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="HighScoresTitle" sid="269625932401815">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="MainMenuTitle" sid="8752762025061231">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TimeRemaining" sid="9974725802092442">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="ProgressBar" sid="4065945224784043">
+                <plugin id="progressbar" />
+            </object-type>
+            <object-type name="TimeBar" sid="3432733094639903">
+                <plugin id="progressbar" />
+                <instance-variables>
+                    <instance-variable name="TimeBar" sid="6886653715041662" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type name="DistanceDisplay" sid="7611133371904019">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="playerIcon" sid="9470633395185672">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7002862685493157" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Speed_Boost2.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="clockIcon" sid="7823133016101571">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4660550808954433" speed="5">
+                        <frame duration="1" hotspotX="0.517241" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\clock icon.png">
+                            <collision-poly>
+                                <point x="0.310345" y="0.264706" />
+                                <point x="0.482759" y="0.235294" />
+                                <point x="0.689655" y="0.264706" />
+                                <point x="0.896552" y="0.5" />
+                                <point x="0.827586" y="0.852941" />
+                                <point x="0.482759" y="0.970588" />
+                                <point x="0.172414" y="0.852941" />
+                                <point x="0.0344828" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Button2" sid="5550616601038779">
+                <plugin id="Button" />
+            </object-type>
+        </object-folder>
+        <object-type name="TiledBackground" sid="5772786646862292">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="9030079593228309">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="Block" sid="8925746584767034">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="4459663156646824">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="329992205610564">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Piso-01.jpg" />
+        </object-type>
+        <object-type name="Player" sid="7324601311744592">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="4465625514126958">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="7" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="773252887343673" speed="20">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40001.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40002.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40003.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40004.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40005.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40006.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Untitled-40007.png">
+                        <image-point name="hat" x="0.56" y="0.103093" />
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Jumping" pingpong="0" repeatcount="1" repeatto="0" sid="3845152419449797" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Jumping-02.png">
+                        <image-point name="hat" x="0.48" y="0.13" />
+                    </frame>
+                </animation>
+                <animation framecount="10" loop="0" name="Happy" pingpong="0" repeatcount="1" repeatto="0" sid="7597816466599844" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0001.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0002.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0003.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0004.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0005.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0006.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0007.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0008.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0009.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Shine0010.png">
+                        <image-point name="hat" x="0.5" y="0.0927835" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="715376884109922">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Keyboard" sid="3468525850755496">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="TiledBackground2" sid="1101291969611526">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="GameOverTitle" sid="4231058899609858">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SushiRojo" sid="4982757596671573">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="3785438742705116">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DragDrop" sid="9185282670473376">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="825572056140433" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Speed_Boost3-02.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SushiVerde" sid="9308893877215611">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="442204350898477">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DragDrop" sid="7435237691832878">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6542303663085866" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Speed_Boost3-01.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SushiDorado" sid="4854634667040969">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="4794232376940824">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DragDrop" sid="4731282943219965">
+                    <behavior id="DragnDrop" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="9" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3370800728391458" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0002.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0003.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0004.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0005.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0006.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0007.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0008.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0009.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\ShineFish0010.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="speedBoost" sid="944113112306623">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5222551683806561">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9323945607826104" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nacho\Dropbox\Universidad\Semestre 12\Taller de Videojuegos\Proyecto\Speed_Boost2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="WinTitle" sid="5471607944289823">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Score" sid="3643094462938577">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WinReplay" sid="8998796185123236">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="WinMain" sid="2851372375288165">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button" sid="7520795561273139">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="WebStorage" sid="1028079450071617">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="GameOverScore" sid="907726632130759">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GameOverMaxScore" sid="183028046107213">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextBox" sid="8915256701924789">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="MaxScore1Title" sid="322971949683558">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MaxScore2Title" sid="9027694466048162">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MaxScore3Title" sid="7796081381559351">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MaxScore1" sid="9074174062549951">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MaxScore2" sid="2157790308130978">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MaxScore3" sid="1258291883497965">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Speed" sid="2819393713125024">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="Array" sid="4330853519486606">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Mouse" sid="7622631583726146">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="TiledBackground3" sid="8920800234534457">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\ZSeba\Desktop\Downloads\HurryUP-master(1)\HurryUP-master\Food court at Rockwood Mall.jpg" />
+        </object-type>
+        <object-type name="Gata" sid="6731430668662281">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7795815617375826" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ZSeba\Desktop\Downloads\HurryUP-master(1)\HurryUP-master\lunchidle.png">
+                        <collision-poly>
+                            <point x="0.136364" y="0.131387" />
+                            <point x="0.5" y="0.0583942" />
+                            <point x="0.848485" y="0.145985" />
+                            <point x="0.848485" y="0.5" />
+                            <point x="0.5" y="1" />
+                            <point x="0.181818" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="fail" pingpong="0" repeatcount="1" repeatto="0" sid="9910310308508141" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ZSeba\Desktop\Downloads\HurryUP-master(1)\HurryUP-master\lunchfail.png">
+                        <collision-poly>
+                            <point x="0.13447" y="0.128623" />
+                            <point x="0.5" y="0.057971" />
+                            <point x="0.848485" y="0.144928" />
+                            <point x="0.848485" y="0.5" />
+                            <point x="0.5" y="1" />
+                            <point x="0.1875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="open" pingpong="0" repeatcount="1" repeatto="0" sid="3342526476736856" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ZSeba\Desktop\Downloads\HurryUP-master(1)\HurryUP-master\lunchopen.png">
+                        <collision-poly>
+                            <point x="0.136364" y="0.130435" />
+                            <point x="0.5" y="0.057971" />
+                            <point x="0.848485" y="0.144928" />
+                            <point x="0.848485" y="0.5" />
+                            <point x="0.5" y="1" />
+                            <point x="0.189394" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerConv" sid="4751626705009929">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5876528495044047" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.501754" original-source="C:\wamp\www\Hurryup\HurryUP\talkingdefault.png">
+                        <collision-poly>
+                            <point x="0.140541" y="0.0912281" />
+                            <point x="0.497297" y="0.0912281" />
+                            <point x="0.751351" y="0.161404" />
+                            <point x="0.859459" y="0.498246" />
+                            <point x="0.735135" y="0.82807" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.0378378" y="0.975439" />
+                            <point x="0.124324" y="0.498246" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="agree" pingpong="0" repeatcount="1" repeatto="0" sid="527573652020258" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.501754" original-source="C:\wamp\www\Hurryup\HurryUP\talkingagree.png">
+                        <collision-poly>
+                            <point x="0.140541" y="0.0912281" />
+                            <point x="0.497297" y="0.0912281" />
+                            <point x="0.751351" y="0.161404" />
+                            <point x="0.859459" y="0.498246" />
+                            <point x="0.735135" y="0.82807" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.0378378" y="0.975439" />
+                            <point x="0.124324" y="0.498246" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="disagree" pingpong="0" repeatcount="1" repeatto="0" sid="7078832291904137" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.501754" original-source="C:\wamp\www\Hurryup\HurryUP\talkingdisagree.png">
+                        <collision-poly>
+                            <point x="0.140541" y="0.0912281" />
+                            <point x="0.497297" y="0.0912281" />
+                            <point x="0.751351" y="0.161404" />
+                            <point x="0.859459" y="0.498246" />
+                            <point x="0.735135" y="0.82807" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.0378378" y="0.975439" />
+                            <point x="0.124324" y="0.498246" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="neutral" pingpong="0" repeatcount="1" repeatto="0" sid="7374916082095655" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.501754" original-source="C:\wamp\www\Hurryup\HurryUP\talkingneutral.png">
+                        <collision-poly>
+                            <point x="0.140541" y="0.0912281" />
+                            <point x="0.497297" y="0.0912281" />
+                            <point x="0.751351" y="0.161404" />
+                            <point x="0.859459" y="0.498246" />
+                            <point x="0.735135" y="0.82807" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.0378378" y="0.975439" />
+                            <point x="0.124324" y="0.498246" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="FriendConv" sid="1154170975697745">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="happy" pingpong="0" repeatcount="1" repeatto="0" sid="8430117989201092" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\friendhappy.png">
+                        <collision-poly>
+                            <point x="0.0918919" y="0.0548387" />
+                            <point x="0.497297" y="0.33871" />
+                            <point x="0.908108" y="0.0548387" />
+                            <point x="0.87027" y="0.5" />
+                            <point x="0.891892" y="0.935484" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.162162" y="0.903226" />
+                            <point x="0.0918919" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="sad" pingpong="0" repeatcount="1" repeatto="0" sid="9654795551673302" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\friendsad.png">
+                        <collision-poly>
+                            <point x="0.0918919" y="0.0548387" />
+                            <point x="0.497297" y="0.33871" />
+                            <point x="0.908108" y="0.0548387" />
+                            <point x="0.87027" y="0.5" />
+                            <point x="0.891892" y="0.935484" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.162162" y="0.903226" />
+                            <point x="0.0918919" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="angry" pingpong="0" repeatcount="1" repeatto="0" sid="5652823409380953" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\friendangry.png">
+                        <collision-poly>
+                            <point x="0.0918919" y="0.0548387" />
+                            <point x="0.497297" y="0.33871" />
+                            <point x="0.908108" y="0.0548387" />
+                            <point x="0.87027" y="0.5" />
+                            <point x="0.891892" y="0.935484" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.162162" y="0.903226" />
+                            <point x="0.0918919" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="win" pingpong="0" repeatcount="1" repeatto="0" sid="7480396406511651" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\friendwin.png">
+                        <collision-poly>
+                            <point x="0.0918919" y="0.0548387" />
+                            <point x="0.497297" y="0.33871" />
+                            <point x="0.908108" y="0.0548387" />
+                            <point x="0.87027" y="0.5" />
+                            <point x="0.891892" y="0.935484" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.162162" y="0.903226" />
+                            <point x="0.0918919" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="fail" pingpong="0" repeatcount="1" repeatto="0" sid="8926951065155726" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\friendfail.png">
+                        <collision-poly>
+                            <point x="0.0918919" y="0.0548387" />
+                            <point x="0.497297" y="0.33871" />
+                            <point x="0.908108" y="0.0548387" />
+                            <point x="0.87027" y="0.5" />
+                            <point x="0.891892" y="0.935484" />
+                            <point x="0.497297" y="1" />
+                            <point x="0.162162" y="0.903226" />
+                            <point x="0.0918919" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerGlobe" sid="7405169361998591">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1894797747554151" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\playerglobe.png">
+                        <collision-poly>
+                            <point x="0.118919" y="0.169231" />
+                            <point x="0.497297" y="0.0384615" />
+                            <point x="0.827027" y="0.246154" />
+                            <point x="0.886486" y="0.5" />
+                            <point x="0.805405" y="0.723077" />
+                            <point x="0.497297" y="0.907692" />
+                            <point x="0.151351" y="0.784615" />
+                            <point x="0.0162162" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="FriendGlobe" sid="3714214091382849">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4781394511453336" speed="5">
+                    <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\wamp\www\Hurryup\HurryUP\friendglobe.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.497297" y="0.0384615" />
+                            <point x="1" y="0" />
+                            <point x="0.886486" y="0.5" />
+                            <point x="0.805405" y="0.723077" />
+                            <point x="0.497297" y="0.907692" />
+                            <point x="0.151351" y="0.784615" />
+                            <point x="0.0162162" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="scissors" sid="5613580436155289">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8113871659128478" speed="5">
+                    <frame duration="1" hotspotX="0.504425" hotspotY="0.504951" original-source="C:\wamp\www\Hurryup\HurryUP\iconscissors.png">
+                        <collision-poly>
+                            <point x="0.19469" y="0.217822" />
+                            <point x="0.495575" y="0.049505" />
+                            <point x="0.79646" y="0.227723" />
+                            <point x="0.849558" y="0.49505" />
+                            <point x="0.769912" y="0.742574" />
+                            <point x="0.495575" y="0.881188" />
+                            <point x="0.221239" y="0.752475" />
+                            <point x="0.123894" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rock" sid="3313494537373131">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2238904850621691" speed="5">
+                    <frame duration="1" hotspotX="0.504425" hotspotY="0.504951" original-source="C:\wamp\www\Hurryup\HurryUP\iconrock.png">
+                        <collision-poly>
+                            <point x="0.176991" y="0.19802" />
+                            <point x="0.495575" y="0.039604" />
+                            <point x="0.79646" y="0.227723" />
+                            <point x="0.876106" y="0.49505" />
+                            <point x="0.787611" y="0.762376" />
+                            <point x="0.495575" y="0.940594" />
+                            <point x="0.185841" y="0.792079" />
+                            <point x="0.079646" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="paper" sid="9780549461092045">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7810257182149057" speed="5">
+                    <frame duration="1" hotspotX="0.504425" hotspotY="0.504951" original-source="C:\wamp\www\Hurryup\HurryUP\iconpaper.png">
+                        <collision-poly>
+                            <point x="0.20354" y="0.227723" />
+                            <point x="0.495575" y="0.0792079" />
+                            <point x="0.787611" y="0.237624" />
+                            <point x="0.867257" y="0.49505" />
+                            <point x="0.787611" y="0.762376" />
+                            <point x="0.495575" y="0.920792" />
+                            <point x="0.20354" y="0.772277" />
+                            <point x="0.115044" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="rockbutton" sid="6343730959374007">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5803130553308941" speed="5">
+                    <frame duration="1" hotspotX="0.504425" hotspotY="0.504951" original-source="C:\wamp\www\Hurryup\HurryUP\iconrock.png">
+                        <collision-poly>
+                            <point x="0.176991" y="0.19802" />
+                            <point x="0.495575" y="0.039604" />
+                            <point x="0.79646" y="0.227723" />
+                            <point x="0.876106" y="0.49505" />
+                            <point x="0.787611" y="0.762376" />
+                            <point x="0.495575" y="0.940594" />
+                            <point x="0.185841" y="0.792079" />
+                            <point x="0.079646" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="scissorsbutton" sid="1162688207492984">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8671245362595308" speed="5">
+                    <frame duration="1" hotspotX="0.504425" hotspotY="0.504951" original-source="C:\wamp\www\Hurryup\HurryUP\iconscissors.png">
+                        <collision-poly>
+                            <point x="0.19469" y="0.217822" />
+                            <point x="0.495575" y="0.049505" />
+                            <point x="0.79646" y="0.227723" />
+                            <point x="0.849558" y="0.49505" />
+                            <point x="0.769912" y="0.742574" />
+                            <point x="0.495575" y="0.881188" />
+                            <point x="0.221239" y="0.752475" />
+                            <point x="0.123894" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="paperbutton" sid="404265502761297">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1077071373406869" speed="5">
+                    <frame duration="1" hotspotX="0.504425" hotspotY="0.504951" original-source="C:\wamp\www\Hurryup\HurryUP\iconpaper.png">
+                        <collision-poly>
+                            <point x="0.20354" y="0.227723" />
+                            <point x="0.495575" y="0.0792079" />
+                            <point x="0.787611" y="0.237624" />
+                            <point x="0.867257" y="0.49505" />
+                            <point x="0.787611" y="0.762376" />
+                            <point x="0.495575" y="0.920792" />
+                            <point x="0.20354" y="0.772277" />
+                            <point x="0.115044" y="0.49505" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hat" sid="1669872006317491">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6721491017220446" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.888889" original-source="C:\wamp\www\Hurryup\HurryUP\hat.png">
+                        <collision-poly>
+                            <point x="0.238095" y="0.37037" />
+                            <point x="0.5" y="0.111111" />
+                            <point x="0.761905" y="0.37037" />
+                            <point x="0.738095" y="0.481481" />
+                            <point x="0.928571" y="0.888889" />
+                            <point x="0.0714286" y="0.888889" />
+                            <point x="0.261905" y="0.481481" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hat1" sid="8373984222005595">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1904985305868924" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="C:\wamp\www\Hurryup\HurryUP\hat.png">
+                        <collision-poly>
+                            <point x="0.238095" y="0.37037" />
+                            <point x="0.5" y="0.111111" />
+                            <point x="0.761905" y="0.37037" />
+                            <point x="0.738095" y="0.481481" />
+                            <point x="0.928571" y="0.888889" />
+                            <point x="0.0714286" y="0.888889" />
+                            <point x="0.261905" y="0.481481" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Game.xml</layout>
+        <layout>Main Menu.xml</layout>
+        <layout>HighScores.xml</layout>
+        <layout>Store.xml</layout>
+        <layout>GameOver.xml</layout>
+        <layout>Lunch.xml</layout>
+        <layout>Conversation.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Game Events.xml</event-sheet>
+        <event-sheet>Main Menu Events.xml</event-sheet>
+        <event-sheet>HighScores Events.xml</event-sheet>
+        <event-sheet>Store Events.xml</event-sheet>
+        <event-sheet>GameOver Events.xml</event-sheet>
+        <event-sheet>Lunch Events.xml</event-sheet>
+        <event-sheet>Conversation Events.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="4">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="5" />
+        <global-instance type="WebStorage" uid="37" />
+        <global-instance type="Mouse" uid="43" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

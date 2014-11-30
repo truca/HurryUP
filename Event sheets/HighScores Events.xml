@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>HighScores Events</name>
+    <events>
+        <event-block sid="9131784696374834">
+            <conditions>
+                <condition id="0" name="On clicked" sid="2720586698008259" type="ReturnHS" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="3167160103616354" type="System">
+                    <param id="0" name="Layout">Main Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3085407001530396">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4764552614183899" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1616286323336724" type="MaxScore1">
+                    <param id="0" name="Text">str(WebStorage.LocalValue(&quot;MaxScore1&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="7641276346753101" type="MaxScore2">
+                    <param id="0" name="Text">str(WebStorage.LocalValue(&quot;MaxScore2&quot;))</param>
+                </action>
+                <action id="0" name="Set text" sid="7708460053492178" type="MaxScore3">
+                    <param id="0" name="Text">str(WebStorage.LocalValue(&quot;MaxScore3&quot;))</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

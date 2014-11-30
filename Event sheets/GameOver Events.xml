@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameOver Events</name>
+    <events>
+        <variable constant="0" name="Score" sid="6542343640430897" static="0" type="number">0</variable>
+        <variable constant="0" name="maxScore1" sid="273618102744144" static="0" type="number">0</variable>
+        <variable constant="0" name="maxScore2" sid="6225680674264464" static="0" type="number">0</variable>
+        <variable constant="0" name="maxScore3" sid="7947579064360178" static="0" type="number">0</variable>
+        <event-block sid="7715341068259338">
+            <conditions>
+                <condition id="0" name="On clicked" sid="7968076180105958" type="GameOverReturn" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9394358976216023" type="System">
+                    <param id="0" name="Layout">Main Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3273175360698208">
+            <conditions>
+                <condition id="0" name="On clicked" sid="5624456542673445" type="GameOverReplay" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="4179843134232522" type="WebStorage">
+                    <param id="0" name="Key">&quot;Score&quot;</param>
+                    <param id="1" name="Value">&quot;0&quot;</param>
+                </action>
+                <action id="0" name="Set local value" sid="8923813717974989" type="WebStorage">
+                    <param id="0" name="Key">&quot;i&quot;</param>
+                    <param id="1" name="Value">&quot;0&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5698684776159513" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3441476578859127">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8906808303959948" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="6417627825152952" type="GameOverScore">
+                    <param id="0" name="Text">&quot;&quot;&amp;WebStorage.LocalValue(&quot;Score&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="4890351757320316" type="System">
+                    <param id="0" name="Variable">maxScore1</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;MaxScore1&quot;))</param>
+                </action>
+                <action id="-9" name="Set value" sid="8897616869671181" type="System">
+                    <param id="0" name="Variable">maxScore2</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;MaxScore2&quot;))</param>
+                </action>
+                <action id="-9" name="Set value" sid="2693928909871804" type="System">
+                    <param id="0" name="Variable">maxScore3</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;MaxScore3&quot;))</param>
+                </action>
+                <action id="-9" name="Set value" sid="4634126142794464" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6182378222043702">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8708010034547013" type="System">
+                            <param id="0" name="Variable">maxScore1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="9678219694471244" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore1&quot;</param>
+                            <param id="1" name="Value">str(Score)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="170710410894332" type="GameOverMaxScore">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5333729328621313">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1915827089878994" type="System">
+                            <param id="0" name="Variable">maxScore2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="6493561489975392" type="System">
+                            <param id="0" name="Variable">maxScore1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="6823320613499152" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore2&quot;</param>
+                            <param id="1" name="Value">str(Score)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="267780030041728" type="GameOverMaxScore">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5163458696718801">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7233704647477068" type="System">
+                            <param id="0" name="Variable">maxScore3</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="8457153660968667" type="System">
+                            <param id="0" name="Variable">maxScore1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="8323697611658886" type="System">
+                            <param id="0" name="Variable">maxScore2</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="3372330156117819" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore3&quot;</param>
+                            <param id="1" name="Value">str(Score)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="992233927946464" type="GameOverMaxScore">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

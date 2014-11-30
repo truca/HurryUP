@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Main Menu Events</name>
+    <events>
+        <event-block sid="9621433042425405">
+            <conditions>
+                <condition id="0" name="On clicked" sid="4146529457235982" type="Play" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="7515626550905411" type="WebStorage">
+                    <param id="0" name="Key">&quot;Score&quot;</param>
+                    <param id="1" name="Value">&quot;0&quot;</param>
+                </action>
+                <action id="0" name="Set local value" sid="6657360751571505" type="WebStorage">
+                    <param id="0" name="Key">&quot;i&quot;</param>
+                    <param id="1" name="Value">&quot;0&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1781536606023768" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9483154254139555">
+            <conditions>
+                <condition id="0" name="On clicked" sid="7412501273526864" type="HighScoreButton" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6010910488046529" type="System">
+                    <param id="0" name="Layout">HighScores</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9214617519083034">
+            <conditions>
+                <condition id="0" name="On clicked" sid="4343985093933136" type="StoreButton" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8276897482885738" type="System">
+                    <param id="0" name="Layout">Store</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9317795857977553">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2904125372914792" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9955747145361806">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="5757354972116456" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="7928211139775236" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore1&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6466195914673441">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="2928838495182006" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="3473575150142552" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore2&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3426358924828519">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="1544222844744635" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="8715042895455916" type="WebStorage">
+                            <param id="0" name="Key">&quot;MaxScore3&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

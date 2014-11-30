@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game Events</name>
+    <events>
+        <variable constant="0" name="Hatnumber" sid="4517476765499576" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerNormalSpeed" sid="9899996344337582" static="0" type="number">80</variable>
+        <variable constant="0" name="MaxTime" sid="2318357988104065" static="0" type="number">45</variable>
+        <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1666471554292632" static="0" type="number">0</variable>
+        <variable constant="0" name="MinigameSelection" sid="5203636167940901" static="0" type="number">0</variable>
+        <variable constant="0" name="SpeedBuffTimeRemaining" sid="4857376511344149" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerSpeed" sid="6967045653497197" static="0" type="number">80</variable>
+        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="9887942744307912" static="0" type="number">0</variable>
+        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="3371467795215937" static="0" type="number">600</variable>
+        <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
+        <event-block sid="4545883225108836">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2959697177721882" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6856056387640172" type="TiledBackground">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2409587518179766" type="Block">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-9" name="Set value" sid="8818419904701836" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;Score&quot;))</param>
+                </action>
+                <action id="-9" name="Set value" sid="4424634563621733" type="System">
+                    <param id="0" name="Variable">PlayerNormalSpeed</param>
+                    <param id="1" name="Value">30*(0.95^int(WebStorage.LocalValue(&quot;i&quot;)))+50</param>
+                </action>
+                <action id="-9" name="Set value" sid="5384149379703519" type="System">
+                    <param id="0" name="Variable">PlayerSpeed</param>
+                    <param id="1" name="Value">PlayerNormalSpeed</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2866406723483493">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7132379150963065" type="System">
+                            <param id="0" name="First value">Hatnumber</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="8071247698120512" type="System">
+                            <param id="0" name="Object to create">hat</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="577490468389652">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1681914668538241" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="6260726342614733" type="hat">
+                    <param id="0" name="X">Player.ImagePointX(&quot;hat&quot;)</param>
+                    <param id="1" name="Y">Player.ImagePointY(&quot;hat&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
+        <event-block sid="3112846496166187">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="8626422980047894" type="TiledBackground">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-Self.Width / 2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="2158555745523159" type="TiledBackground">
+                    <param id="0" name="X">Self.X + Self.Width / 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>While on floor, keep holding the &quot;run right&quot; control, so the character keeps running.</comment>
+        <event-block sid="4153776170844716">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="4377408748148402" type="Player" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="3026034754793126" type="Player">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="232882351941549" type="Player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>On any user input at all, make the character jump.</comment>
+        <event-block any="1" sid="2397601593450745">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="8659605133775643" type="Touch" />
+                <condition id="1" name="On any key pressed" sid="452264449845444" type="Keyboard" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9730871694230731">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="5032869195679301" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="5714662124306465" type="Player">
+                            <param id="0" name="Vector Y">-650</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="7608593118428122" type="Player">
+                            <param id="0" name="Animation">&quot;Jumping&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="1955624974758999">
+            <conditions>
+                <condition id="7" name="On any key released" sid="4820463541466401" type="Keyboard" />
+                <condition id="1" name="On any touch end" sid="3784769519915048" type="Touch" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4343691146395803">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5304678159241026" type="System">
+                            <param id="0" name="First value">Player.Platform.VectorY</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">-250</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="517654298399433" type="Player">
+                            <param id="0" name="Vector Y">-250</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Keep incrementing the current and total distances, and display the total distance in a text object.</comment>
+        <event-block sid="4021964279484641">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9012489017849836" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="6929514853810195" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Value">Block.Bullet.Speed * dt</param>
+                </action>
+                <action id="-10" name="Add to" sid="7692684240770648" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">Block.Bullet.Speed * dt</param>
+                </action>
+                <action id="0" name="Set text" sid="1212065987354142" type="DistanceDisplay">
+                    <param id="0" name="Text">round(TotalDistance)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
+        <event-block sid="7587110443548098">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4817026512456952" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">NextBlock</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="6840546871192574" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Value">NextBlock</param>
+                </action>
+                <action id="-3" name="Create object" sid="4114501840387382" type="System">
+                    <param id="0" name="Object to create">Block</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-7" name="Set size" sid="5480340438665356" type="Block">
+                    <param id="0" name="Width">100 + random(400)</param>
+                    <param id="1" name="Height">60 + random(180)</param>
+                </action>
+                <action id="-3" name="Set position" sid="9871083593833192" type="Block">
+                    <param id="0" name="X">LayoutWidth</param>
+                    <param id="1" name="Y">LayoutHeight - Self.Height</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8139952117390109" type="Block">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action id="-9" name="Set value" sid="600508774503294" type="System">
+                    <param id="0" name="Variable">NextBlock</param>
+                    <param id="1" name="Value">Block.Width + 20 + random(200)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
+        <event-block sid="4635564409903555">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="7468840206390037" type="Block">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-Self.Width</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1516571550963041" type="Block" />
+            </actions>
+        </event-block>
+        <comment>If the player falls off the bottom of the screen, restart the game.</comment>
+        <event-block sid="4128638028416412">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="7138961352591648" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set local value" sid="9644911715307576" type="WebStorage">
+                    <param id="0" name="Key">&quot;Score&quot;</param>
+                    <param id="1" name="Value">str(int(TotalDistance))</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="9765195358440687" type="System" />
+                <action id="-2" name="Go to layout" sid="4325334762495361" type="System">
+                    <param id="0" name="Layout">GameOver</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Due to the acceleration of the platform movement, we need to do some tweaks to make sure the player doesn&apos;t gradually get pushed off to the left of the screen over time.</comment>
+        <event-block sid="4861379551282907">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="9349838834924752" type="Player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">105</param>
+                </condition>
+                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="3785165637982388" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="5993013451329601" type="Player">
+                    <param id="0" name="X">Self.X + 50* dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4240984357375399">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="5000820384230161" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="7482421709969673" type="Player">
+                    <param id="0" name="X">Self.X + 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4218615982108646">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="5052015460095463" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set progress" sid="4036908120888777" type="TimeBar">
+                    <param id="0" name="Value">TimeBar.Progress+(0.1*100)/MAXTIME</param>
+                </action>
+                <action disabled="1" id="3" name="Set progress" sid="9117557309305217" type="ProgressBar">
+                    <param id="0" name="Value">ProgressBar.Progress+(0.1*PlayerSpeed)/MAXTIME</param>
+                </action>
+                <action disabled="1" id="-11" name="Subtract from" sid="9752767585010462" type="System">
+                    <param id="0" name="Variable">SpeedBuffTimeRemaining</param>
+                    <param id="1" name="Value">0.1</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="5686410663917467" type="Speed">
+                    <param id="0" name="Text">str(PlayerSpeed)</param>
+                </action>
+                <action id="0" name="Set text" sid="745615516594206" type="Speed">
+                    <param id="0" name="Text">WebStorage.LocalValue(&quot;i&quot;)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="9209041942020391">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9231895057091834" type="System">
+                            <param id="0" name="Variable">SpeedBuffTimeRemaining</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5071654359330041" type="System">
+                            <param id="0" name="Variable">SpeedBuffTimeRemaining</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2294569325597377" type="System">
+                            <param id="0" name="Variable">PlayerSpeed</param>
+                            <param id="1" name="Value">PlayerNormalSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2430257890124683">
+                    <conditions>
+                        <condition id="1" name="Compare progress" sid="922103212981354" type="ProgressBar">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3929775448280456" type="System">
+                            <param id="0" name="Variable">MinigameSelection</param>
+                            <param id="1" name="Value">choose(1,2)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7534302706553227">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9124536414727152" type="System">
+                                    <param id="0" name="Variable">MinigameSelection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="5896248898788079" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Score&quot;</param>
+                                    <param id="1" name="Value">str(int(TotalDistance))</param>
+                                </action>
+                                <action id="-21" name="Reset global variables" sid="4587375066225464" type="System" />
+                                <action id="-2" name="Go to layout" sid="7462662572031242" type="System">
+                                    <param id="0" name="Layout">Lunch</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9407385890077497">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7658820341721476" type="System">
+                                    <param id="0" name="Variable">MinigameSelection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="2870551670519452" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Score&quot;</param>
+                                    <param id="1" name="Value">str(int(TotalDistance))</param>
+                                </action>
+                                <action id="-21" name="Reset global variables" sid="1772352363124405" type="System" />
+                                <action id="-2" name="Go to layout" sid="2171101547668529" type="System">
+                                    <param id="0" name="Layout">Conversation</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2979054908991806">
+                    <conditions>
+                        <condition id="1" name="Compare progress" sid="4748910100019083" type="TimeBar">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="2889105473825773" type="WebStorage">
+                            <param id="0" name="Key">&quot;Score&quot;</param>
+                            <param id="1" name="Value">str(int(TotalDistance))</param>
+                        </action>
+                        <action id="-21" name="Reset global variables" sid="1293856579510198" type="System" />
+                        <action id="-2" name="Go to layout" sid="543910588081574" type="System">
+                            <param id="0" name="Layout">GameOver</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7170248741736319">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9559509618339035" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6251723738342674" type="System">
+                    <param id="0" name="Object to create">speedBoost</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">LayoutWidth</param>
+                    <param id="3" name="Y">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="232284164404177">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6490220603721763" type="Player">
+                    <param id="0" name="Object">speedBoost</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3050176685572718" type="speedBoost" />
+                <action id="-9" name="Set value" sid="5221481778739906" type="System">
+                    <param id="0" name="Variable">PlayerSpeed</param>
+                    <param id="1" name="Value">PlayerNormalSpeed*3</param>
+                </action>
+                <action id="-10" name="Add to" sid="7826564118390824" type="System">
+                    <param id="0" name="Variable">SpeedBuffTimeRemaining</param>
+                    <param id="1" name="Value">6</param>
+                </action>
+                <action id="4" name="Set animation" sid="4027743911856183" type="Player">
+                    <param id="0" name="Animation">&quot;Happy&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="3" name="Set progress" sid="8453286514160701" type="ProgressBar">
+                    <param id="0" name="Value">ProgressBar.Progress+20</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
